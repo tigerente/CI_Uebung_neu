@@ -1,4 +1,4 @@
-%% I) VORBEREITUNG
+%% I) VORBEREITUNG (nur einmalig ausfuehren)
 
 %Parameter-Setup
 minVal = -2 * pi;
@@ -30,6 +30,9 @@ if (noise == true)
     trainY = trainY + alpha * randn(1,nrTrain);
 end
 
+
+%% II) MLP ERZEUGEN (jeweils vor dem Training ausfuehren)
+
 %MLP mit 25 Neuronen in verdeckter Schicht erstellen
 net = newff([minVal,maxVal], [-1 1], 25);
 
@@ -47,7 +50,9 @@ net.trainParam.showWindow = 1;
 % Datenreihe fuer Plots
 plotX = linspace (minVal,maxVal,1000);
 
+
 %% II.1) REFERENZ: Keine Massnahme gegen Overfitting
+
 % Kopie anlegen
 net1 = net;
 %Aufteilung der Daten in Training/Test
@@ -61,7 +66,9 @@ net1.divideParam.testInd = nrTrain+(1:nrTest);
 %Ausgabe des Netzes bestimmen
 predY = sim(net1,plotX);
 
-%% II.2) Early Stopping
+
+%% III.2) EARLY STOPPING
+
 % Kopie anlegen
 net2 = net;
 %Aufteilung der Daten in Training/Validierung/Test
@@ -75,7 +82,9 @@ net2.divideParam.testInd = nrTrain+nrValidate+(1:nrTest);
 %Ausgabe des Netzes bestimmen
 predY = sim(net2,plotX);
 
-%% II.3) REGULARISIERUNG
+
+%% III.3) REGULARISIERUNG
+
 % Kopie anlegen
 net3 = net;
 %Aufteilung der Daten in Training/Test
@@ -93,7 +102,8 @@ net3.performParam.regularization = regRatio;
 %Ausgabe des Netzes bestimmen
 predY = sim(net3,plotX);
 
-%% III) AUSWERTUNG
+
+%% IV) AUSWERTUNG
 
 %Testfehler plotten und letzten Wert auf der Konsole ausgeben
 plotperf(tr);
