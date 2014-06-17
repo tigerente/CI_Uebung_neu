@@ -55,7 +55,7 @@ end
 		dx1 = target(:,1)-pos(:,1);
 		dy1 = target(:,2)-pos(:,2);
 		for i=1:popSize
-			action(i,:) = sim(param{i},[dy1(i)/50 dx1(i)/50 pos(i,3)/2/pi]');
+			action(i,:) = sim(param{i},[dy1(i) dx1(i) pos(i,3)]');
 		end
 	end
 	function simplePhysics()
