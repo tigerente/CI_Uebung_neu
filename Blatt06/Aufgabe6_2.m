@@ -7,9 +7,9 @@ nrTrain = 60;
 nrValidate = 60;
 nrTest = 200;
 f = @(x) cos(x);
-noise = false;
+noise = true;
 alpha = 0.01; % Rauschfaktor
-regRatio = 0.4; % Regularisierungsfaktor
+regRatio = 0.01; % Regularisierungsfaktor
 
 %Validierungsdaten erstellen: linear
 validateX = linspace(minVal,maxVal, nrValidate);
