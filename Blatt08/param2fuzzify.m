@@ -35,14 +35,9 @@ for i=1:4
         c = paramMatrix(j,3);
         d = paramMatrix(j,4);
         
-        % Steigung des Anstiegs der Trapezfunktion
-        rise = 1/(b-a);
-        % Steigung des Abfalls der Trapezfunktion
-        fall = -1/(d-c);
-        
         % functionHandle mit Trapezfunktion erzeugen
-        functionHandle = @(x) (((x * rise)-(a*rise)) .* (x>=a & x<b)) + (1.*(x>=b & x<c)) + (((x*fall)-(d*fall)).*((x>=c & x<d)));
-        
+        functionHandle = @(x) trapez (x, [a, b, c, d]);
+       
         % functionHandle in cellArray ablegen
         paramCell{j} = functionHandle;
     end
