@@ -5,7 +5,8 @@ function result = trapez(xIn,trapezParams)
 % PARAMETER:
 %   xIn:            Der Eingabevektor mit Werten, deren Funktionswerte
 %                   berechnet werden sollen
-%   trapezParams:   Parameter, die die Trapezfunktion charakterisieren
+%   trapezParams:   Array der Parameter, die die Trapezfunktion 
+%                   charakterisieren (z.B. [1,2,4,5])
 
 % Trapezparameter auslesen
 a = trapezParams(1);
