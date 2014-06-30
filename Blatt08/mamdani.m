@@ -8,13 +8,13 @@ function out = mamdani(input,fuzzify,ruleBase,defuzzify,range,defuzzyRes)
 %       fuzzify:    (4 x 1)-Cell-Array der Zugehoerigkeitsfunktionen fuer
 %                   die Fuzzy-Mengen alle vier Variablen (T, H, W, I).
 %                   Eintraege sind (ni x 1)-Cell-Arrays, wobei ni die
-%                   Anzahl der Fuzzy-Mengen für Variable i sind. Die
+%                   Anzahl der Fuzzy-Mengen fuer Variable i sind. Die
 %                   Eintraege dieser Cell-Arrays sind function_handles der
 %                   Zugehoerigkeitsfunktionen.
-%       ruleBase:   Fuzzy-Regelsatz (und-verknüpft) als (nrRules x 4)-
+%       ruleBase:   Fuzzy-Regelsatz (und-verknuepft) als (nrRules x 4)-
 %                   Matrix. Eintraege: Indizes der Fuzzy-Mengen
 %                   Zeilen: Regeln
-%                   Spalten: 1, 2, 3: Prämissen (T, H, W)
+%                   Spalten: 1, 2, 3: Praemissen (T, H, W)
 %                                  4: Konklusion (I)
 %       defuzzify:  Methode zur Defuzzifizierung als String.
 %                   'lom': Left-Of-Maximum
