@@ -15,12 +15,21 @@ c = trapezParams(3);
 d = trapezParams(4);
 
 % Steigung des Anstiegs der Trapezfunktion
-rise = 1/(b-a);
+if(a == b)
+    rise = 0; 
+else
+    rise = 1/(b-a);    
+end
+
 % Steigung des Abfalls der Trapezfunktion
-fall = -1/(d-c);
+if(c == d)
+    fall = 0; 
+else
+    fall = -1/(d-c); 
+end
 
 % Ergebnis der Trapezfunktion
-result =  (((xIn * rise)-(a*rise)) .* (xIn>=a & xIn<b)) + (1.*(xIn>=b & xIn<c)) + (((xIn*fall)-(d*fall)).*((xIn>=c & xIn<d))); 
+result =  (((xIn * rise)-(a*rise)) .* (xIn>=a & xIn<b)) + (1.*(xIn>=b & xIn<=c)) + (((xIn*fall)-(d*fall)).*((xIn>=c & xIn<=d))); 
 
 end
 

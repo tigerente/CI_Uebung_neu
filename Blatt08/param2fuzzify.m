@@ -36,7 +36,7 @@ for i=1:4
         d = paramMatrix(j,4);
         
         % functionHandle mit Trapezfunktion erzeugen
-        functionHandle = @(x) trapez (x, [a, b, c, d]);
+        functionHandle = @(x) trapez(x, [a, b, c, d]);
        
         % functionHandle in cellArray ablegen
         paramCell{j} = functionHandle;
