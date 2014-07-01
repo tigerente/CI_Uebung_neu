@@ -63,6 +63,7 @@ for d = 1 : nrData
         S_W = intersect(input_W, praem_W);
         
         % Aktivierungen der Praemissien bestimmen
+% BUG: Anfaelligkeit gegenueber Startwert von fminsearch
         [~, act_T] = fminsearch(@(x) S_T(x)*(-1), 1);
         [~, act_H] = fminsearch(@(x) S_H(x)*(-1), 1);
         [~, act_W] = fminsearch(@(x) S_W(x)*(-1), 1);
@@ -87,6 +88,7 @@ for d = 1 : nrData
     
     % Defuzzifikation
     raster = linspace(range(1), range(2), defuzzyRes);
+% BUG: Funktionsauswertung terminiert nicht
     values = united_conclusion (raster);
     
     if (strcmp(defuzzify, 'cog'))
