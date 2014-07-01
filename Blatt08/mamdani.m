@@ -35,7 +35,7 @@ nrData = size(input,1);
 nrRules = size(ruleBase,1);
 
 conclusion = cell(nrRules,1);
-out = zeros(ndData,1);
+out = zeros(nrData,1);
 
 % Gehe alle Datensaetze durch
 for d = 1 : nrData
@@ -50,9 +50,9 @@ for d = 1 : nrData
     % Gehe alle Regeln durch
     for r = 1 : nrRules
         % Praemissen fuzzifizieren:
-        p_T = rulebase(r,1); % Indizes der Fuzzy-Mengen (Praemissen)
-        p_H = rulebase(r,2);
-        p_W = rulebase(r,3);
+        p_T = ruleBase(r,1); % Indizes der Fuzzy-Mengen (Praemissen)
+        p_H = ruleBase(r,2);
+        p_W = ruleBase(r,3);
         praem_T = fuzzify {1}{p_T}; % Zugehoerigkeitsfunktionen (Praemissen)
         praem_H = fuzzify {2}{p_H};
         praem_W = fuzzify {3}{p_W};
@@ -66,12 +66,15 @@ for d = 1 : nrData
         [~, act_T] = fminsearch(@(x) S_T(x)*(-1), 1);
         [~, act_H] = fminsearch(@(x) S_H(x)*(-1), 1);
         [~, act_W] = fminsearch(@(x) S_W(x)*(-1), 1);
-    
+        act_T = act_T * (-1);
+        act_H = act_H * (-1);
+        act_W = act_W * (-1);
+        
         % Und-Verknuepfung der drei Praemissen-Terme:
-        act = min(act_T, act_H, act_W);
+        act = min([act_T, act_H, act_W]);
         
         % Konklusion fuzzifizieren:
-        c = rulebase(r,4);
+        c = ruleBase(r,4);
         concl = fuzzify {4}{c};
         
         % Aktivierung der Konklusion bestimmen (Fuzzy-Inferenz)

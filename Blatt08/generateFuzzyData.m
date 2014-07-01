@@ -9,6 +9,7 @@ mild =              [15,17,22,24];
 sommerlichWarm =    [22,24,30,32];
 hitze =             [30,32,35,37];
 grosseHitze =       [35,37,40,40];
+no_T =              [0,0,40,40]; % Dummy fuer fehlende Angabe
 
 % LUFTFEUCHTIGKEIT (H) im Intervall [0%,100%]:
 intervall_H =       [0,100];
@@ -17,6 +18,7 @@ trocken =           [15,20,35,40];
 klamm =             [35,40,55,60];
 schwuel =           [55,60,75,80];
 nass =              [75,80,100,100];
+no_H =              [0,0,100,100]; % Dummy fuer fehlende Angabe
 
 % WINDGESCHWINDIGKEIT (W) im Intervall [0km/h,100km/h]
 intervall_W =       [0,100];
@@ -24,6 +26,7 @@ windstill =         [0,0,2,4];
 leichteBrise =      [2,4,20,25];
 windig =            [20,25,50,55];
 sturm =             [50,55,100,100];
+no_W =              [0,0,100,100]; % Dummy fuer fehlende Angabe
 
 % WWI im Intervall [0,10]
 intervall_WWI =     [0,10];

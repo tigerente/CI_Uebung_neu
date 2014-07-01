@@ -29,7 +29,7 @@ else
 end
 
 % Ergebnis der Trapezfunktion
-result =  (((xIn * rise)-(a*rise)) .* (xIn>=a & xIn<b)) + (1.*(xIn>=b & xIn<=c)) + (((xIn*fall)-(d*fall)).*((xIn>=c & xIn<=d))); 
+result =  (((xIn * rise)-(a*rise)) .* (xIn>=a & xIn<b)) + (1.*(xIn>=b & xIn<c)) + (((xIn*fall)-(d*fall)).*((xIn>=c & xIn<=d))); 
 
 end
 
