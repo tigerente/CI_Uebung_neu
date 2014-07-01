@@ -3,8 +3,8 @@ Kategorien der Variablen: In Parametern a,b,c,d
 Temperatur (T): 		[1] Kalt 		(0,0,8,10), 
 				[2] etwas kalt 		(8,10,15,17), 
 				[3] mild 		(15,17,22,24), 
-				[4] sommerlich warm 	(22,24,28,30), 
-				[5] Hitze 		(28,30,35,37), 
+				[4] sommerlich warm 	(22,24,30,32), 
+				[5] Hitze 		(30,32,35,37), 
 				[6] groﬂe Hitze 	(35,37,40,40)
 Intervall: [0∞C,40∞C]
 
@@ -17,8 +17,8 @@ Luftfeuchtigkeit (H): 		[1] extrem trocken	(0,0,15,20),
 Intervall: [0%,100%]
 
 
-Windgeschwindigkeit (W): 	[1] windstill		(0,0,8,10), 
-				[2] leichte Brise	(8,10,20,25), 
+Windgeschwindigkeit (W): 	[1] windstill		(0,0,2,4), 
+				[2] leichte Brise	(2,4,20,25), 
 				[3] windig		(20,25,50,55), 
 				[4] Sturm 		(50,55,100,100)
 Intervall: [0km/h,100km/h]
