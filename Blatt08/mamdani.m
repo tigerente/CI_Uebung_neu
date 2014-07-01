@@ -1,10 +1,11 @@
 function out = mamdani(input,fuzzify,ruleBase,defuzzify,range,defuzzyRes)
 %MAMDANI Wertet ein Mamdani-Fuzzy-System aus.
 % Eingabe-Parameter:
-%       input:      Angabe der drei erklaerenden Variablen als Index der
-%                   Fuzzy-Mengen. (nrData x 3)-Matrix.
-%                   Zeilen: Datensaetze.
-%                   Spalten: Variablen (T, H, W)
+%       input:      Angabe der drei erklaerenden Variablen als
+%                   (nrData x 3)-Matrix. Eintraege: Indizes der
+%                   Fuzzy-Mengen. 
+%                   Zeilen: Datensaetze
+%                   Spalten: Praemissen-Variablen (T, H, W)
 %       fuzzify:    (4 x 1)-Cell-Array der Zugehoerigkeitsfunktionen fuer
 %                   die Fuzzy-Mengen alle vier Variablen (T, H, W, I).
 %                   Eintraege sind (ni x 1)-Cell-Arrays, wobei ni die
@@ -27,7 +28,81 @@ function out = mamdani(input,fuzzify,ruleBase,defuzzify,range,defuzzyRes)
 %       defuzzyRes: Aufloesung der Defuzzifizierung. Anzahl an
 %                   Rasterpunkten.
 % Ausgabe-Parameter:
-%       out:        Ausgabe des exakten Wertes der Konklusion.
+%       out:        Ausgabe der exakten Werte der defuzzifizierten
+%                   Konklusionen als (nrData x 1)-Matrix
+
+nrData = size(input,1);
+nrRules = size(ruleBase,1);
+
+conclusion = cell(nrRules,1);
+out = zeros(ndData,1);
+
+% Gehe alle Datensaetze durch
+for d = 1 : nrData
+    % Eingaben fuzzifizieren
+    i_T = input(d, 1); % Indizes der Fuzzy-Mengen (Inputs)
+    i_H = input(d, 2);
+    i_W = input(d, 3);
+    input_T = fuzzify {1}{i_T}; % Zugehoerigkeitsfunktionen (Inputs)
+    input_H = fuzzify {2}{i_H};
+    input_W = fuzzify {3}{i_W};
+
+    % Gehe alle Regeln durch
+    for r = 1 : nrRules
+        % Praemissen fuzzifizieren:
+        p_T = rulebase(r,1); % Indizes der Fuzzy-Mengen (Praemissen)
+        p_H = rulebase(r,2);
+        p_W = rulebase(r,3);
+        praem_T = fuzzify {1}{p_T}; % Zugehoerigkeitsfunktionen (Praemissen)
+        praem_H = fuzzify {2}{p_H};
+        praem_W = fuzzify {3}{p_W};
+        
+        % Schnittmengen aus Praemissen und Eingaben bilden:
+        S_T = intersect(input_T, praem_T);
+        S_H = intersect(input_H, praem_H);
+        S_W = intersect(input_W, praem_W);
+        
+        % Aktivierungen der Praemissien bestimmen
+        [~, act_T] = fminsearch(@(x) S_T(x)*(-1), 1);
+        [~, act_H] = fminsearch(@(x) S_H(x)*(-1), 1);
+        [~, act_W] = fminsearch(@(x) S_W(x)*(-1), 1);
+    
+        % Und-Verknuepfung der drei Praemissen-Terme:
+        act = min(act_T, act_H, act_W);
+        
+        % Konklusion fuzzifizieren:
+        c = rulebase(r,4);
+        concl = fuzzify {4}{c};
+        
+        % Aktivierung der Konklusion bestimmen (Fuzzy-Inferenz)
+        conclusion{r} = conclude (act, concl);
+    end
+    
+    % Konklusion aller konjugierten Regeln bestimmen:
+    united_conclusion = unite (conclusion);
+    
+    
+    % Defuzzifikation
+    raster = linspace(range(1), range(2), defuzzyRes);
+    values = united_conclusion (raster);
+    
+    if (strcmp(defuzzify, 'cog'))
+        out(d) = trapz(raster, raster .* values) / trapz(raster, values);
+    else
+        maximum = max(values);
+        max_pos = find (values == maximum);
+        if (strcmp(defuzzify, 'lom'))
+            out(d) = raster(max_pos(1));
+        end
+        if (strcmp(defuzzify, 'mom'))
+            out(d) = mean(raster(max_pos));
+        end
+        if (strcmp(defuzzify, 'rom'))
+            out(d) = raster(max_pos(end));
+        end
+    end
+
+end
 
 end
 
