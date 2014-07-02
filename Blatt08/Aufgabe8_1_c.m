@@ -1,4 +1,4 @@
-% Skript zur Bearbeitung von Aufgabe 8.1.a
+% Skript zur Bearbeitung von Aufgabe 8.1.c
 clear all, close all;
 
 % Daten erzeugen mit Skript

@@ -37,19 +37,19 @@ Intervall: [0,10]
 Regeln:
 	T,H,W 	=> I
 
-1)	1,3,_ 	=> 1
-2)	4,_,2 	=> 4
-3)	6,_,1	=> 1
-4)	3,_,_	=> 3
-5)	5,4,_	=> 1
-6)	_,1,_	=> 2
-7)	2,_,1	=> 3
-8)	4,_,4	=> 3
-8.1)	1,_,4	=> 1
-8.2)	2,_,4	=> 1
-8.3)	3,_,4	=> 2
-8.4)	5,_,4	=> 2
-8.5)	6,_,4	=> 1
-9)	1,_,3	=> 1
-10)	1,2,_	=> 3
-10.1)	1,5,_	=> 2	
+1)	1,3,_ 	=> 1	d.h.	WENN T = kalt 			UND Luftfeuchte = klamm, 			DANN ist Index = furchtbar
+2)	4,_,2 	=> 4	d.h.	WENN T = sommerlich warm 	UND Windgeschwindigkeit = leichte Brise, 	DANN ist Index = wunderbar
+3)	6,_,1	=> 1	d.h.	WENN T = große Hitze		UND Windgeschwindigkeit = windstill,	 	DANN ist Index = furchtbar
+4)	3,_,_	=> 3	d.h.	WENN T = mild									DANN ist Index = gut aushaltbar
+5)	5,4,_	=> 1	d.h.	WENN T = Hitze 			UND Luftfeuchte = schwül,			DANN ist Index = furchtbar
+6)	_,1,_	=> 2	d.h.	WENN 				    Luftfeuchte = extrem trocken,		DANN ist Index = unangenehm
+7)	2,_,1	=> 3	d.h.	WENN T = etwas kalt 		UND Windgeschwindigkeit = windstill, 		DANN ist Index = gut aushaltbar
+8)	4,_,4	=> 3	d.h.	WENN T = sommerlich warm 	UND Windgeschwindigkeit = Sturm, 		DANN ist Index = gut aushaltbar
+8.1)	1,_,4	=> 1	d.h.	WENN T = kalt		 	UND Windgeschwindigkeit = Sturm, 		DANN ist Index = furchtbar
+8.2)	2,_,4	=> 1	d.h.	WENN T = etwas kalt		UND Windgeschwindigkeit = Sturm, 		DANN ist Index = furchtbar
+8.3)	3,_,4	=> 2	d.h.	WENN T = mild			UND Windgeschwindigkeit = Sturm, 		DANN ist Index = unangenehm
+8.4)	5,_,4	=> 2	d.h.	WENN T = Hitze			UND Windgeschwindigkeit = Sturm, 		DANN ist Index = unangenehm
+8.5)	6,_,4	=> 1	d.h.	WENN T = große Hitze		UND Windgeschwindigkeit = Sturm, 		DANN ist Index = furchtbar
+9)	1,_,3	=> 1	d.h.	WENN T = kalt			UND Windgeschwindigkeit = windig,		DANN ist Index = furchtbar
+10)	1,2,_	=> 3	d.h.	WENN T = kalt			UND Luftfeuchte = trocken,			DANN ist Index = gut aushaltbar
+10.1)	1,5,_	=> 2	d.h.	WENN T = Hitze 			UND Luftfeuchte = trocken,			DANN ist Index = unangenehm
