@@ -1,0 +1,19 @@
+erste Idden nach Betrachtung der Daten:
+
+- Geschwindigkeit: 	mindestens 3 Zugehörigkeitsfunktionen
+- Lenkwinkel:		eher mehr => ausprobieren!
+
+- Form der Zugehörigkeitsfunktionen:
+	
+
+- Anfänglich mit 6 Zugehörigkeitsfunktionen für Lenkanktion, 4 für Geschwindigkeit.
+  Reduziert auf 3 für beides, da manche ZGF nie ausgenutzt wurden und da die KOnklusionen zu ähnlich waren unter den Regeln.
+
+- surface der Ausgabe angeschaut und versucht die charakteristische Form der Daten durch Anpassung der ZGFs (Form, Anzahl) nachzustellen
+
+_ Endkonfiguration:
+	3 ZGFs für die Lenkaktion
+	4 ZGFs für Geschwindigkeit
+
+	mit diesen konnte die Form der Daten gut beschrieben werden...Form der ZGFs so gewählt, dass sie die Form der 
+	Daten gut nachstellen in ihrem Bereich
