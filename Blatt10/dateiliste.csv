@@ -1,0 +1,9 @@
+Dateiname;Größe;Ersteller;Datum;Name;Beschreibung;Pfad
+evalShooter.m;544;"Jan Hendrik Schoenke, M. Sc.";"2014-07-09 15:33:56";evalShooter.m;;/evalShooter.m
+Grabenkrieg.m;1935;"Jan Hendrik Schoenke, M. Sc.";"2014-07-09 15:34:12";Grabenkrieg.m;;/Grabenkrieg.m
+shootBall.m;5075;"Jan Hendrik Schoenke, M. Sc.";"2014-07-09 15:34:27";shootBall.m;;/shootBall.m
+blatt10.pdf;167605;"Jan Hendrik Schoenke, M. Sc.";"2014-07-09 15:34:41";"Übungsblatt 10 - On-line Lernen: PA, RLS & UOSLib";"In diesem Übungsblatt werden Algorithmen in Matlab geschrieben und zur Auswertung ein- und zweidimensionale Plots 
+angefertigt. Erstellen Sie im Dateiordner Ihrer Gruppe in Stud.IP einen Ordner mit dem Namen Blatt 10 und laden Sie zu 
+zweit sowohl die m-Files, als auch die fertigen Matlab-Figures mit sinnvoller Achsenbeschriftung rechtzeitig in diesen Ordner 
+hoch. Geben Sie in Vips je nach Aufgabenstellung die textuelle Interpretationen Ihrer Ergebnisse  sowie ggf. die Namen der 
+Dateien an, die sich auf die jeweilige Aufgabe beziehen.";/blatt10.pdf
