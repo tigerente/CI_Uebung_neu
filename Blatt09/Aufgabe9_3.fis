@@ -1,0 +1,40 @@
+[System]
+Name='Aufgabe9_3'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='Winkeldifferenz'
+Range=[-3.14159265358979 3.14159265358979]
+NumMFs=4
+MF1='stark_negativ':'trimf',[-5.236 -3.142 -0.785]
+MF2='leicht_negativ':'trimf',[-3.15 -0.785 0.785]
+MF3='leicht_positiv':'trimf',[-0.785 0.785 3.142]
+MF4='stark_positiv':'trimf',[0.785 3.122 5.216]
+
+[Input2]
+Name='Geschwindigkeit'
+Range=[-10 10]
+NumMFs=4
+MF1='niedrig':'trimf',[-16.67 -10 -3.333]
+MF2='mittlel':'trimf',[-10 -3.333 3.333]
+MF3='hoch':'trimf',[-3.333 3.333 10]
+MF4='sehr_hoch':'trimf',[3.333 10 16.67]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'constant',[0]
+MF2='mf2':'constant',[0.5]
+MF3='mf3':'constant',[1]
+
+[Rules]

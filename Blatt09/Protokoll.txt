@@ -17,3 +17,38 @@ _ Endkonfiguration:
 
 	mit diesen konnte die Form der Daten gut beschrieben werden...Form der ZGFs so gewählt, dass sie die Form der 
 	Daten gut nachstellen in ihrem Bereich
+
+
+
+Ideen zu Aufgabe 9_3:
+
+a)
+
+Gewählte Eingaben:	
+
+
+Für Lenkaktion:
+eigene Geschwindigkeit
+Winkeldifferenz zum aktuellen Ziel
+
+Für Beschleunigung:
+Winkeldifferenz zum aktuellen Ziel
+Abstand vom aktuellen Zielpunkt
+
+
+Fuzzymengen für Lenkaktion:
+eigene Geschwindigkeit:
+
+gering
+mittel
+hoch 
+sehr hoch
+
+
+Winkeldifferenz zum aktuellen Ziel:
+Trapeze mit kleinen Plateaus
+
+leicht positiv 	(Quadrant 1)
+leicht negatv 	(Quadrant 4)
+stark positiv	(Quadrant 2)
+stark negativ	(Quadrant 3)
