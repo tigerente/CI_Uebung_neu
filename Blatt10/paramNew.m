@@ -5,7 +5,7 @@ function paramNew = paramNew(x,y,param)
 % PARAMETER:
 %   x:      x-Wert im Eingangsraum
 %   y:      Vorgegebener y-Wert, der erreicht werden soll
-%   param:  aktueller Parameterverktor
+%   param:  aktueller Parameterverktor (1 x numParams)
 %
 % RETURN:
 %   paramNew:   mit Hilfe des Lerndatums (x,y) aktualisierter ParameterVektor
@@ -14,11 +14,10 @@ function paramNew = paramNew(x,y,param)
 phiOld = evalPhi(x,numel(param));
 
 % Vorhersage mit altem ParameterVektor berechnen
-yPredict = param' * phiOld;
+yPredict = phiOld * param';
 
 % Berechnung des neuen ParameterVektors
-paramNew = param +((y-yPredict) * phiOld)/(phiOld' * phiOld); 
-
+paramNew = param +((y-yPredict) * phiOld)/(phiOld * phiOld'); 
 
 end
 
