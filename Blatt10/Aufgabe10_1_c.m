@@ -1,10 +1,11 @@
 % Skript zu Bearbeitung von Aufgabe 10.1.c
+clear all, close all;
 
 % Parametersetup
 xMin = -2*pi;           % Intervallsgrenzen
 xMax = 2*pi;    
 
-numData = 200;          % Anzahl Lerndaten
+numData = 400;          % Anzahl Lerndaten
 numBasisFuncs = 16;     % Anzahl Basisfunktionen
 
 numGridPts = 100;       % Anzahl der Punkte für das Raster zur Bildung des MSE
@@ -25,7 +26,7 @@ xVis = linspace(xMin,xMax,1000);
 targetVisualise = targetFunc(xVis);
 
 % Figure maximiert erstellen
-figure('units','normalized','outerposition',[0 0 1 1])
+figure('units','normalized','outerposition',[0 0 1 1]);
 
 % Durch alle Lerndaten gehen
 for i=1:numData

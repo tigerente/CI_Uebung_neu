@@ -35,7 +35,7 @@ for i=1:N
    
     % Parameter der Baisfunktion festlegen
     if(i == 1)
-        params = [peaks(i),peaks(i),peaks(i+1)];    
+        params = [peaks(i),peaks(i),xMax];    
     elseif(i == N)
         params = [peaks(i-1),peaks(i),peaks(i)];
     else
