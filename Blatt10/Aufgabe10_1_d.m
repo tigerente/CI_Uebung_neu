@@ -12,7 +12,7 @@ numRuns = 25;                   % Anzahl an Laeufen pro Konstellation
 
 trainFunc = @(x) cos(x);        % Zielfunktion
 
-% Speichervariablen für Ergebnisse
+% Speichervariablen fuer Ergebnisse
 meanMSE = zeros(maxBasisFuncs-1,maxTrainData); 
 
 % Anzahl Basisfunktionen variieren
@@ -27,7 +27,7 @@ for b = minBasisFuncs:maxBasisFuncs
         % Mehrere Runs pro Konstellation
         for r=1:numRuns
             
-            % Training durchführen
+            % Training durchfuehren
             tmpMSE(r) = executeTraining(b,t,trainFunc,-2*pi,2*pi);
         end
         

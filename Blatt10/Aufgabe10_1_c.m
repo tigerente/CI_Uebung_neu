@@ -8,7 +8,7 @@ xMax = 2*pi;
 numData = 400;          % Anzahl Lerndaten
 numBasisFuncs = 16;     % Anzahl Basisfunktionen
 
-numGridPts = 100;       % Anzahl der Punkte für das Raster zur Bildung des MSE
+numGridPts = 100;       % Anzahl der Punkte fuer das Raster zur Bildung des MSE
 
 targetFunc = @(x) cos(x);     % Zielfunktion
 
