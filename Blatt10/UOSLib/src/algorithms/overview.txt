@@ -1,0 +1,9 @@
+The list of currently implemented learning algorithms is as follows:
+
+AROW - Adaptive Regularization Of Weights
+CW - Confidence Weighted learning
+GH - Gaussian Herding
+IRMA - Incremental Risk Minimization
+PA - Passive Aggressive
+Perceptron - Perceptron Algorithm
+RLS - Recursive Least Squares with forgetting

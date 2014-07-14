@@ -1,0 +1,58 @@
+Unified Online-learning Systems LIBrary - UOSLIB
+by Andreas Buschermöhle, Jens Hülsmann, Werner Brockmann
+University of Osnabrück
+Contact Andreas.Buschermoehle@Uni-Osnabrueck.de
+Last Update 2013-11-29
+
+V 1.6
+- extended and refactored interface of icl_base to allow for complete setup
+  of learning algorithms and model structures
+- added possibility to use IRMA with zero stiffness
+- fixed minor bug in IRMA initialization
+- added a new drift dataset for changing targets
+
+V 1.5
+- added more learning algorithms: Perceptron, IRMA
+- extended GLTs to be of any dimensionality and to arbitrarily partition
+  the inputs
+- added a new 1D polynomial and 3D linear dataset
+
+V 1.4
+- changed main function to be callable from another script and making it
+  executable on its own at the same time
+- added more learning algorithms: PA-I, PA-II, AROW, GH (with full, exact,
+  drop, project variants), CW
+
+V 1.3
+- added support for saving parameter development
+- added option to choose learning algorithm through a variable method - the
+  learning algorithm is identified by adding the method-identifier to
+  icl_initILS_ and icl_learn_
+- included PA and RLS as learning algorithms
+
+V 1.2
+- added initialization routine for ILS - now every learning method can
+  initialize further parameters in this routine
+- added two new generators: relearning and spiral loop
+
+V 1.1 b
+- fixed polynomial generator, now only one offset term is added to the
+  phi-vector regardless of the dimension
+
+V 1.1 a
+- fixed downwards compatibility of seeding of random number generator
+  , using the old style seeding now to achieve exactly the same results in
+  every Matlab version
+
+V 1.1
+- fixed crossedridge-generator to generate output values in [-1 1]
+- added two new generators: highdimlin, highdimnonlin
+- fixed random number seed to be the same at every run for rand and randn
+- added examples for structural initialization
+- added examples for parameter initialization
+
+V 1.0 a
+- added common basis of approximator
+
+V 1.0
+- initial framework release
