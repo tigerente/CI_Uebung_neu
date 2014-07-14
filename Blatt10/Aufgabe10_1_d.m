@@ -2,18 +2,18 @@
 clear all, close all;
 
 % Parametersetup
-minTrainData = 1;               % Minimale Anzahl an Trainingsdaten
-maxTrainData = 2000;            % Maximale Anzahl an Trainindsdaten
+minTrainData = 2;               % Minimale Anzahl an Trainingsdaten
+maxTrainData = 20;            % Maximale Anzahl an Trainindsdaten
 
 minBasisFuncs = 2;              % Minimale Anzahl an Basisfunktionen
-maxBasisFuncs = 100;            % Maximale Anzahl an Basisfunktionen
+maxBasisFuncs = 10;            % Maximale Anzahl an Basisfunktionen
 
 numRuns = 25;                   % Anzahl an Laeufen pro Konstellation
 
 trainFunc = @(x) cos(x);        % Zielfunktion
 
 % Speichervariablen fuer Ergebnisse
-meanMSE = zeros(maxBasisFuncs-1,maxTrainData); 
+meanMSE = zeros(maxBasisFuncs-1,maxTrainData-1); 
 
 % Anzahl Basisfunktionen variieren
 for b = minBasisFuncs:maxBasisFuncs
@@ -32,7 +32,7 @@ for b = minBasisFuncs:maxBasisFuncs
         end
         
         % MSE mitteln
-        meanMSE(b-1,t) = mean(tmpMSE);
+        meanMSE(b-1,t-1) = mean(tmpMSE);
     end
 end
 

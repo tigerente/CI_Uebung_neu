@@ -1,11 +1,11 @@
 % Skript zu Bearbeitung von Aufgabe 10.1.c
-clear all, close all;
+% clear all, close all;
 
 % Parametersetup
 xMin = -2*pi;           % Intervallsgrenzen
 xMax = 2*pi;    
 
-numData = 400;          % Anzahl Lerndaten
+numData = 200;          % Anzahl Lerndaten
 numBasisFuncs = 16;     % Anzahl Basisfunktionen
 
 numGridPts = 100;       % Anzahl der Punkte fuer das Raster zur Bildung des MSE
