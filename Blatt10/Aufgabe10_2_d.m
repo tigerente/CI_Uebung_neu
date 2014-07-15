@@ -9,12 +9,12 @@ rSeed = 12345;
 start = 0;
 
 % Teilaufgaben-spezifische Parameter:
-livePlot = false;
-%livePlot = true;
-fastmode = false;
-%fastmode = true;
-quiet = true;
-%quiet = false;
+%livePlot = false;
+livePlot = true;
+%fastmode = false;
+fastmode = true;
+%quiet = true;
+quiet = false;
 targetFunc = struct('target', 'sine', 'ND', 300, 'NG', 100, 'noise', 0.0, 'minPath', true);
 model = struct('kind', 'GLT', 'base', 'gauss', 'N', 15);
 
@@ -25,7 +25,7 @@ methodNames = {'PA', 'RLS', 'IRMA'};
 pl = zeros(1,3);
 
 % Variiere Lernmethoden:
-for method = 1:3
+for method = 2:3
     if (method == 1)
         learnMethod = 'PA';
         algSetup.variant = 0;
