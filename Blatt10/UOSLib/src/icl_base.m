@@ -164,18 +164,18 @@ if(nargin < 5)
 end
 %target function
 if(nargin < 6)
-    targetFunc.target = 'sine';
+    targetFunc.target = 'relearn';
     targetFunc.ND = 300;
     targetFunc.NG = 100;
     targetFunc.noise = 0.1;
     targetFunc.minPath = false;
 end
 %choose to view resulting approximation after every learning step
-if(nargin < 7), livePlot = true; end
+if(nargin < 7), livePlot = false; end
 %skip evaluation of loss on ground truth and data to speedup the procedure
-if(nargin < 8), fastmode = true; end
+if(nargin < 8), fastmode = false; end
 %no messages or plots
-if(nargin < 9), quiet = false; end
+if(nargin < 9), quiet = true; end
 %random seed for repeatability
 if(nargin < 10), rSeed = 12345; end
 
